@@ -285,9 +285,76 @@
 
 
 //// JSON
-obj = {name: "arpita", length: 1, a: {this: 'tha"t'}}
-jso = JSON.stringify(obj);
-console.log(typeof jso)
-console.log(jso)
-parsed =n JSON.parse(`{"name":"arpita","length":1,"a":{"this":"that"}}`)
-console.log(parsed);
+// obj = {name: "arpita", length: 1, a: {this: 'tha"t'}}
+// jso = JSON.stringify(obj);
+// console.log(typeof jso)
+// console.log(jso)
+// parsed =n JSON.parse(`{"name":"arpita","length":1,"a":{"this":"that"}}`)
+// console.log(parsed);
+
+
+// Stack and Heap Memory 
+// stack memory used in primitive, when we declare a variable we get a copy 
+// Heap memory used in non-primitive, changes done in original value
+
+let name = "Arpita"
+let anothername = "Annu"
+
+let userone = {
+    email : "user@gmail.com",
+    upi : "user@ybl"
+}
+
+let userTwo = userone
+
+userTwo.email = "arpita11@gmail.com"
+
+console.log(userone.email);
+console.log(userTwo.email);
+
+
+// Arrow Function
+
+const sayhello = () => {
+    console.log("Hello");
+}
+
+const greeting = (name, greet) => {
+    console.log(greet + " " + name)
+}
+
+sayhello()
+greeting("Arpita", "Good Afternoon")
+
+// without arrow function
+
+// const x = {
+//     name:  "Arpita",
+//     role: "JS Developer",
+//     exp: 5,
+//     show: function() {
+//         let that = this
+//         console.log(this)
+//         setTimeout(function() {
+//             console.log(`The name is ${that.name}\nThe role is ${that.role}`)
+//         }, 2000)
+//     }
+// }
+
+
+// with arror function
+const x = {
+    name:  "Arpita",
+    role: "JS Developer",
+    exp: 5,
+    show: function() {
+        // let that = this
+        // console.log(this)
+        setTimeout(() => {
+            console.log(`The name is ${this.name}\nThe role is ${this.role}`)
+        }, 2000)
+    }
+}
+
+
+x.show()
