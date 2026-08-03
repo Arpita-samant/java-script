@@ -297,34 +297,34 @@
 // stack memory used in primitive, when we declare a variable we get a copy 
 // Heap memory used in non-primitive, changes done in original value
 
-let name = "Arpita"
-let anothername = "Annu"
+// let name = "Arpita"
+// let anothername = "Annu"
 
-let userone = {
-    email : "user@gmail.com",
-    upi : "user@ybl"
-}
+// let userone = {
+//     email : "user@gmail.com",
+//     upi : "user@ybl"
+// }
 
-let userTwo = userone
+// let userTwo = userone
 
-userTwo.email = "arpita11@gmail.com"
+// userTwo.email = "arpita11@gmail.com"
 
-console.log(userone.email);
-console.log(userTwo.email);
+// console.log(userone.email);
+// console.log(userTwo.email);
 
 
 // Arrow Function
 
-const sayhello = () => {
-    console.log("Hello");
-}
+// const sayhello = () => {
+//     console.log("Hello");
+// }
 
-const greeting = (name, greet) => {
-    console.log(greet + " " + name)
-}
+// const greeting = (name, greet) => {
+//     console.log(greet + " " + name)
+// }
 
-sayhello()
-greeting("Arpita", "Good Afternoon")
+// sayhello()
+// greeting("Arpita", "Good Afternoon")
 
 // without arrow function
 
@@ -343,18 +343,62 @@ greeting("Arpita", "Good Afternoon")
 
 
 // with arror function
-const x = {
-    name:  "Arpita",
-    role: "JS Developer",
-    exp: 5,
-    show: function() {
-        // let that = this
-        // console.log(this)
-        setTimeout(() => {
-            console.log(`The name is ${this.name}\nThe role is ${this.role}`)
-        }, 2000)
-    }
+// const x = {
+//     name:  "Arpita",
+//     role: "JS Developer",
+//     exp: 5,
+//     show: function() {
+//         // let that = this
+//         // console.log(this)
+//         setTimeout(() => {
+//             console.log(`The name is ${this.name}\nThe role is ${this.role}`)
+//         }, 2000)
+//     }
+// }
+
+
+// x.show()
+
+
+// -----------------------------Destructuring in Java Script----------------------------
+
+// for array - extract value from the array using destructuring
+
+const getuser = ()=>{return "Function inside array"} 
+const users = ["Arpita", "Annu", "Riya", "Kashish", getuser];
+// console.log(users[0]);
+// const [x1,x2,...x3] = users;
+const [x1,x2,x3,x4,x5]=users;
+console.log(x5())
+console.log(x1);
+console.log(x2);
+console.log(x3);
+
+// for objects - extract value from the object using destructuring
+
+const userobject = {
+    name:"Arpita Samant",
+    age:18,
+    city:"Kaladhungi",
+    getcountry: ()=>{return "India"}
 }
 
+const {city,name} = userobject;
+const {age,getcountry,...other} = userobject;
+console.log(getcountry());
+console.log(other);
+console.log(city);
+console.log(name);
 
-x.show()
+
+// work of useState
+
+const useStateArray = [1000, (x)=>{return x}];
+function useState(){
+    return useStateArray
+}
+const [val,setVal]=useState();
+console.log(val);
+console.log(setVal);
+console.log(setVal(2000))
+console.log(setVal("ANNU"))
