@@ -362,43 +362,66 @@
 
 // -----------------------------Destructuring in Java Script----------------------------
 
-// for array - extract value from the array using destructuring
+// // for array - extract value from the array using destructuring
 
-const getuser = ()=>{return "Function inside array"} 
-const users = ["Arpita", "Annu", "Riya", "Kashish", getuser];
-// console.log(users[0]);
-// const [x1,x2,...x3] = users;
-const [x1,x2,x3,x4,x5]=users;
-console.log(x5())
-console.log(x1);
-console.log(x2);
-console.log(x3);
+// const getuser = ()=>{return "Function inside array"} 
+// const users = ["Arpita", "Annu", "Riya", "Kashish", getuser];
+// // console.log(users[0]);
+// // const [x1,x2,...x3] = users;
+// const [x1,x2,x3,x4,x5]=users;
+// console.log(x5())
+// console.log(x1);
+// console.log(x2);
+// console.log(x3);
 
-// for objects - extract value from the object using destructuring
+// // for objects - extract value from the object using destructuring
 
-const userobject = {
-    name:"Arpita Samant",
-    age:18,
-    city:"Kaladhungi",
-    getcountry: ()=>{return "India"}
+// const userobject = {
+//     name:"Arpita Samant",
+//     age:18,
+//     city:"Kaladhungi",
+//     getcountry: ()=>{return "India"}
+// }
+
+// const {city,name} = userobject;
+// const {age,getcountry,...other} = userobject;
+// console.log(getcountry());
+// console.log(other);
+// console.log(city);
+// console.log(name);
+
+
+// // work of useState
+
+// const useStateArray = [1000, (x)=>{return x}];
+// function useState(){
+//     return useStateArray
+// }
+// const [val,setVal]=useState();
+// console.log(val);
+// console.log(setVal);
+// console.log(setVal(2000))
+// console.log(setVal("ANNU"))
+
+// Async function work on background /Await 
+
+async function getData() {
+    // simulate getting data from a server
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(455)
+        }, 3500);
+    })
 }
 
-const {city,name} = userobject;
-const {age,getcountry,...other} = userobject;
-console.log(getcountry());
-console.log(other);
-console.log(city);
-console.log(name);
-
-
-// work of useState
-
-const useStateArray = [1000, (x)=>{return x}];
-function useState(){
-    return useStateArray
+async function main(){
+    console.log("Loading modules")
+    console.log("Do something else")
+    console.log("Load data")
+    let data = await getData()
+    console.log(data)
+    console.log("process data")
+    console.log("task 2")
 }
-const [val,setVal]=useState();
-console.log(val);
-console.log(setVal);
-console.log(setVal(2000))
-console.log(setVal("ANNU"))
+
+main()
